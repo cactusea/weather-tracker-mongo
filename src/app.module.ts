@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ScheduleModule } from '@nestjs/schedule';
 import { WeatherModule } from './weather/weather.module';
 import { HistoryModule } from './history/history.module';
+import { WeatherCronService } from './weather/weather.cron.service';
 
 @Module({
   imports: [
@@ -42,6 +43,6 @@ import { HistoryModule } from './history/history.module';
     HistoryModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, WeatherCronService],
 })
 export class AppModule {}

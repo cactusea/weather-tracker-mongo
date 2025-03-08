@@ -16,6 +16,12 @@ export class Weather {
   @Column({ default: 1 })
   locationId: number;
 
+  @Column({ type: Date })
+  forecastDate: Date;
+
+  @Column({}) // ex. HH:mm-HH:mm
+  time: string;
+
   @Column({ type: 'decimal', precision: 5, scale: 2 })
   temperature: number;
 
@@ -35,7 +41,7 @@ export class Weather {
   description: string;
 
   @CreateDateColumn()
-  timestamp: Date;
+  createdAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;

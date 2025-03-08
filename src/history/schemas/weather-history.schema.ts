@@ -13,20 +13,23 @@ export class Change {
   @Prop({ type: Object })
   newValue: Record<string, any>;
 
-  @Prop({ type: Date, default: Date.now })
-  timestamp: Date;
+  // @Prop({ type: Date, default: Date.now })
+  // timestamp: Date;
 }
 
 @Schema({ timestamps: true })
 export class WeatherHistory {
-  @Prop()
+  @Prop({ required: true })
+  weatherId: number;
+
+  @Prop({ required: true })
   locationId: number;
 
   @Prop({ type: Object })
-  previousState: Record<string, any>;
+  previous: Record<string, any>;
 
   @Prop({ type: Object })
-  currentState: Record<string, any>;
+  current: Record<string, any>;
 
   @Prop([Change])
   changes: Change[];
