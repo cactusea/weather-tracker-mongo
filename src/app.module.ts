@@ -6,7 +6,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ScheduleModule } from '@nestjs/schedule';
 import { WeatherModule } from './weather/weather.module';
-import { HistoryModule } from './history/history.module';
 import { WeatherCronService } from './weather/weather.cron.service';
 
 @Module({
@@ -33,14 +32,13 @@ import { WeatherCronService } from './weather/weather.cron.service';
       useFactory: async (configService: ConfigService) => ({
         uri: configService.get<string>(
           'MONGODB_URI',
-          // 'mongodb://localhost:27017/weather-tracker',
+          // 'mongodb://localhost:27017/weather-forecast-tracker',
         ),
       }),
       inject: [ConfigService],
     }),
     ScheduleModule.forRoot(),
     WeatherModule,
-    HistoryModule,
   ],
   controllers: [AppController],
   providers: [AppService, WeatherCronService],

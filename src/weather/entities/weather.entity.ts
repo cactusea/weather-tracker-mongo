@@ -8,7 +8,7 @@ import {
   DeleteDateColumn,
 } from 'typeorm';
 
-@Entity('weather')
+@Entity('weather') // todo: entity 추상 클래스로 쪼개기
 export class Weather {
   @PrimaryGeneratedColumn()
   id: number;
@@ -27,9 +27,6 @@ export class Weather {
 
   @Column({ type: 'decimal', precision: 5, scale: 2 })
   humidity: number;
-
-  @Column({ type: 'decimal', precision: 6, scale: 2 })
-  pressure: number;
 
   @Column({ type: 'decimal', precision: 5, scale: 2 })
   windSpeed: number;
