@@ -16,7 +16,7 @@ type ForAdminOperationType = ValueOf<
   'CREATE' | 'UPDATE'
 >;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-type ForShipdaOperationType = ValueOf<
+type ForCustomerOperationType = ValueOf<
   typeof CHANGE_LOG_OPERATION_TYPE,
   'UPDATE'
 >;

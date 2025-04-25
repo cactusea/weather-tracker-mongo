@@ -45,7 +45,7 @@ export interface WeatherSnapshot {
     num: number;
   };
   windDirection: string;
-  description: string;
+  description: string | null;
 }
 
 /** 대기질 추적 이벤트 변경내역 저장 객체 인터페이스 */
@@ -55,6 +55,7 @@ export interface AirDustSnapshot {
     num: number;
     unit: string;
   };
+  description: string | null;
 }
 
 /** 해수면 추적 이벤트 변경내역 저장 객체 인터페이스 */
@@ -64,6 +65,7 @@ export interface SeaLevelSnapshot {
     num: number;
     unit: string;
   };
+  description: string | null;
 }
 
 /** 변경내역 데이터 타입 매핑 */
