@@ -6,7 +6,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ScheduleModule } from '@nestjs/schedule';
 import { WeatherModule } from './weather/weather.module';
-import { WeatherCronService } from './weather/weather.cron.service';
 
 @Module({
   imports: [
@@ -41,6 +40,6 @@ import { WeatherCronService } from './weather/weather.cron.service';
     WeatherModule,
   ],
   controllers: [AppController],
-  providers: [AppService, WeatherCronService],
+  providers: [AppService],
 })
 export class AppModule {}
