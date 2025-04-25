@@ -4,7 +4,7 @@ import { ValueOf } from 'type-fest';
 import {
   CHANGE_LOG_OPERATION_TYPE,
   CHANGE_LOG_SOURCE,
-} from '../../weather-tracker/schemas/schema-type';
+} from '../../weather-forecast-tracker/schemas/schema-type';
 
 type ChangeSourceType = (typeof CHANGE_LOG_SOURCE)[
   | 'WEATHER'

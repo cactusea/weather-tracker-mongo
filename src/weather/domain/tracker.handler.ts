@@ -1,5 +1,5 @@
-import { WeatherForecastTracker } from '../../weather-tracker/schemas/weather-forecast-tracker.schema';
 import { AirDust, Weather } from './dto';
+import { WeatherForecastTracker } from '../../weather-forecast-tracker/schemas/weather-forecast-tracker.schema';
 
 export class WeatherForecastTrackerHandler {
   public combined(): void {}
